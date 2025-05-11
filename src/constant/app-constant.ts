@@ -1,6 +1,6 @@
-import {IGeneralState} from '@Maplify/typing';
-import {GeolocationResponse} from '@react-native-community/geolocation';
-import {Region} from 'react-native-maps';
+import { IGeneralState } from '@Maplify/typing';
+import { GeolocationResponse } from '@react-native-community/geolocation';
+import { Region } from 'react-native-maps';
 
 export const DEFAULT_CURRENT_LOCATION: GeolocationResponse = {
   coords: {
@@ -18,8 +18,8 @@ export const DEFAULT_CURRENT_LOCATION: GeolocationResponse = {
 export const DEFAULT_INITIAL_REGION: Region = {
   latitude: 3.140853,
   longitude: 101.693207,
-  longitudeDelta: 0.01,
-  latitudeDelta: 0.01,
+  longitudeDelta: 0.02,
+  latitudeDelta: 0.02,
 } as const;
 
 export const API_TIMEOUT = 3000;
