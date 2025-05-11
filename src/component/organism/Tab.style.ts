@@ -1,5 +1,5 @@
-import {color, margin, padding} from '@Maplify/theme';
-import {StyleSheet} from 'react-native';
+import { color, margin, padding } from '@Maplify/theme';
+import { StyleSheet } from 'react-native';
 
 export const tabStyle = StyleSheet.create({
   container: {

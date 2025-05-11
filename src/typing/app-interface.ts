@@ -1,5 +1,5 @@
-import {TABS} from '@Maplify/constant';
-import {GeolocationResponse} from '@react-native-community/geolocation';
+import { TABS } from '@Maplify/constant';
+import { GeolocationResponse } from '@react-native-community/geolocation';
 
 export interface IGeneralState {
   activeTab: TABS;

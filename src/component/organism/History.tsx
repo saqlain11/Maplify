@@ -1,9 +1,9 @@
-import {GeneralContext} from '@Maplify/context';
-import {useContext, useEffect, useMemo} from 'react';
-import {Dropdown} from '../molecule';
+import { GeneralContext } from '@Maplify/context';
+import { useContext, useEffect, useMemo } from 'react';
+import { Dropdown } from '../molecule';
 
 const History = () => {
-  const {history, setSelectedPlace, selectedPlace, getHistory} =
+  const { history, setSelectedPlace, selectedPlace, getHistory } =
     useContext(GeneralContext);
 
   useEffect(() => {

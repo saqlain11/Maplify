@@ -1,1 +1,1 @@
-export {default as generalReducer} from './general';
+export { default as generalReducer } from './general';

@@ -1,5 +1,5 @@
-import {color} from '@Maplify/theme';
-import {StyleSheet} from 'react-native';
+import { color } from '@Maplify/theme';
+import { StyleSheet } from 'react-native';
 
 export const loaderStyle = StyleSheet.create({
   container: {

@@ -1,11 +1,11 @@
-import {APP_TEXT, TABS} from '@Maplify/constant';
-import {GeneralContext} from '@Maplify/context';
-import {useCallback, useContext} from 'react';
-import {View} from 'react-native';
-import {TabButton} from '../molecule';
-import {tabStyle} from './Tab.style';
+import { APP_TEXT, TABS } from '@Maplify/constant';
+import { GeneralContext } from '@Maplify/context';
+import { useCallback, useContext } from 'react';
+import { View } from 'react-native';
+import { TabButton } from '../molecule';
+import { tabStyle } from './Tab.style';
 const Tab = () => {
-  const {activeTab, setActiveTab} = useContext(GeneralContext);
+  const { activeTab, setActiveTab } = useContext(GeneralContext);
   const onTabPress = useCallback(
     (tab: TABS) => {
       activeTab !== tab && setActiveTab(tab);

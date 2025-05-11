@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const landingStyle = StyleSheet.create({
   container: {
@@ -12,6 +12,6 @@ export const landingStyle = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     width: '95%',
-    top: '8%',
+    top: Platform.OS === 'ios' ? '8%' : '5%',
   },
 });

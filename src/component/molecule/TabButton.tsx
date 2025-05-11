@@ -1,7 +1,7 @@
-import {TABS} from '@Maplify/constant';
+import { TABS } from '@Maplify/constant';
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
-import {tabButtonStyle} from './TabButton.style';
+import { Text, TouchableOpacity } from 'react-native';
+import { tabButtonStyle } from './TabButton.style';
 interface TabButtonProps {
   text: string;
   isTabActive: boolean;

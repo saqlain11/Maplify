@@ -1,1 +1,1 @@
-export {googlePlaces} from './google';
+export { googlePlaces } from './google';

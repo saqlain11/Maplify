@@ -16,8 +16,8 @@ export const DEFAULT_CURRENT_LOCATION: GeolocationResponse = {
 } as const;
 
 export const DEFAULT_INITIAL_REGION: Region = {
-  latitude: 3.140853,
-  longitude: 101.693207,
+  latitude: 4.1093195,
+  longitude: 109.45547499999998,
   longitudeDelta: 0.02,
   latitudeDelta: 0.02,
 } as const;

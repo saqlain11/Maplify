@@ -1,7 +1,7 @@
-import {color} from '@Maplify/theme';
+import { color } from '@Maplify/theme';
 import React from 'react';
-import {ActivityIndicator, View} from 'react-native';
-import {loaderStyle} from './Loader.style';
+import { ActivityIndicator, View } from 'react-native';
+import { loaderStyle } from './Loader.style';
 
 const Loader = () => {
   return (

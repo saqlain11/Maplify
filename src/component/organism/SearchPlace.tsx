@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {LS_STORAGE_KEY} from '@Maplify/constant';
-import {GeneralContext} from '@Maplify/context';
-import {useAsyncStorage} from '@Maplify/hook';
-import React, {useContext, useEffect, useMemo} from 'react';
-import {Dropdown} from '../molecule';
+import { LS_STORAGE_KEY } from '@Maplify/constant';
+import { GeneralContext } from '@Maplify/context';
+import { useAsyncStorage } from '@Maplify/hook';
+import React, { useContext, useEffect, useMemo } from 'react';
+import { Dropdown } from '../molecule';
 
 const SearchPlace = () => {
   const {
@@ -12,7 +12,7 @@ const SearchPlace = () => {
     setSelectedPlace,
     searchSuggestedPlace,
   } = useContext(GeneralContext);
-  const {setPlaceToStorage} = useAsyncStorage(LS_STORAGE_KEY);
+  const { setPlaceToStorage } = useAsyncStorage(LS_STORAGE_KEY);
 
   const suggestedPlaceData = useMemo(
     () =>
@@ -27,7 +27,6 @@ const SearchPlace = () => {
       setPlaceToStorage(selectedPlace);
     }
   }, [selectedPlace.name]);
-
   return (
     <Dropdown
       data={suggestedPlaceData}

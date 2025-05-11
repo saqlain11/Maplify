@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {DEFAULT_INITIAL_REGION} from '@Maplify/constant';
-import {GeneralContext} from '@Maplify/context';
+import { DEFAULT_INITIAL_REGION } from '@Maplify/constant';
+import { GeneralContext } from '@Maplify/context';
 import Geolocation from '@react-native-community/geolocation';
-import React, {useCallback, useContext, useEffect, useRef} from 'react';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
-import {mapStyle} from './Map.style';
+import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import { mapStyle } from './Map.style';
 
 const Map = () => {
   const mapRef: React.RefObject<MapView> = useRef(null as unknown as MapView);
-  const {currentLocation, setCurrentLocation, selectedPlace} =
+  const { currentLocation, setCurrentLocation, selectedPlace } =
     useContext(GeneralContext);
 
   useEffect(() => {
@@ -16,7 +16,6 @@ const Map = () => {
       setCurrentLocation(info);
     });
   }, []);
-
   useEffect(() => {
     mapRef.current?.animateToRegion(
       {
@@ -28,7 +27,7 @@ const Map = () => {
           selectedPlace.geometry?.location?.lat ||
           currentLocation?.coords.latitude,
       },
-      10000,
+      1000,
     );
   }, [selectedPlace.name]);
 
@@ -39,7 +38,7 @@ const Map = () => {
         longitude: currentLocation?.coords.longitude,
         latitude: currentLocation?.coords.latitude,
       },
-      10000,
+      1000,
     );
   }, [currentLocation.coords.latitude, currentLocation.coords.longitude]);
 
@@ -47,6 +46,7 @@ const Map = () => {
     <MapView
       ref={mapRef}
       initialRegion={DEFAULT_INITIAL_REGION}
+      region={DEFAULT_INITIAL_REGION}
       onMapReady={animateToRegion}
       rotateEnabled
       userLocationPriority="high"

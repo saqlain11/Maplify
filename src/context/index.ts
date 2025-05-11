@@ -1,1 +1,1 @@
-export {GeneralContext, default as GeneralProvider} from './general';
+export { GeneralContext, default as GeneralProvider } from './general';

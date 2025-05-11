@@ -1,10 +1,10 @@
-import {APP_TEXT} from '@Maplify/constant';
-import {color} from '@Maplify/theme';
-import {IDropdownData} from '@Maplify/typing';
-import React, {useState} from 'react';
-import {View} from 'react-native';
-import {Dropdown as DropdownComponent} from 'react-native-element-dropdown';
-import {dropdownStyle} from './Dropdown.style';
+import { APP_TEXT } from '@Maplify/constant';
+import { color } from '@Maplify/theme';
+import { IDropdownData } from '@Maplify/typing';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { Dropdown as DropdownComponent } from 'react-native-element-dropdown';
+import { dropdownStyle } from './Dropdown.style';
 
 interface DropDownProps {
   data: IDropdownData[];
@@ -20,12 +20,13 @@ const Dropdown = ({
   onSearch = undefined,
 }: DropDownProps) => {
   const [isFocus, setIsFocus] = useState(false);
+  const extraProps = onSearch ? { searchQuery: () => true } : {};
   return (
     <View style={dropdownStyle.container}>
       <DropdownComponent
         style={[
           dropdownStyle.dropdown,
-          isFocus && {borderColor: color.border.ghost},
+          isFocus && { borderColor: color.border.ghost },
         ]}
         placeholderStyle={dropdownStyle.placeholderStyle}
         selectedTextStyle={dropdownStyle.selectedTextStyle}
@@ -46,6 +47,7 @@ const Dropdown = ({
           onChange(item.value);
           setIsFocus(false);
         }}
+        {...extraProps}
       />
     </View>
   );

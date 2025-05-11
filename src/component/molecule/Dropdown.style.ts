@@ -1,5 +1,5 @@
-import {color, fontSize, margin, padding} from '@Maplify/theme';
-import {StyleSheet} from 'react-native';
+import { color, fontSize, margin, padding } from '@Maplify/theme';
+import { StyleSheet } from 'react-native';
 
 export const dropdownStyle = StyleSheet.create({
   container: {

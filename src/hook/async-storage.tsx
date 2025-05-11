@@ -1,6 +1,6 @@
-import {ISelectedPlace} from '@Maplify/typing';
+import { ISelectedPlace } from '@Maplify/typing';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 
 const useAsyncStorage = (key: string) => {
   const getPlacesFromStorage = useCallback(async () => {
@@ -24,7 +24,7 @@ const useAsyncStorage = (key: string) => {
     [getPlacesFromStorage, key],
   );
 
-  return {getPlacesFromStorage, setPlaceToStorage};
+  return { getPlacesFromStorage, setPlaceToStorage };
 };
 
 export default useAsyncStorage;

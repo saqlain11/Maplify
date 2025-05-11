@@ -1,5 +1,5 @@
-import {GeneralProvider} from '@Maplify/context';
-import {Landing} from '@Maplify/screen';
+import { GeneralProvider } from '@Maplify/context';
+import { Landing } from '@Maplify/screen';
 
 function App(): React.JSX.Element {
   return (

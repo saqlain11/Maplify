@@ -1,6 +1,6 @@
-import {BASE_URL} from '@env';
-import {API_TIMEOUT} from '@Maplify/constant';
-import axios, {AxiosRequestConfig} from 'axios';
+import { BASE_URL } from '@env';
+import { API_TIMEOUT } from '@Maplify/constant';
+import axios, { AxiosRequestConfig } from 'axios';
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,

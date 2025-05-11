@@ -1,1 +1,1 @@
-export {default as useAsyncStorage} from './async-storage';
+export { default as useAsyncStorage } from './async-storage';
