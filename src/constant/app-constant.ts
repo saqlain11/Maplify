@@ -1,4 +1,4 @@
-import { IGeneralState } from '@Maplify/typing';
+import { IGeneralState, IResult, ISelectedPlace } from '@Maplify/typing';
 import { GeolocationResponse } from '@react-native-community/geolocation';
 import { Region } from 'react-native-maps';
 
@@ -31,10 +31,10 @@ export enum TABS {
 export const INITIAL_STATE: IGeneralState = {
   activeTab: TABS.SEARCH,
   currentLocation: DEFAULT_CURRENT_LOCATION,
-  selectedPlace: {} as any,
+  selectedPlace: {} as ISelectedPlace,
   isSearching: false,
-  suggestedPlaces: [],
-  history: [],
+  suggestedPlaces: [] as IResult[],
+  history: [] as ISelectedPlace[],
   animate: true,
 } as const;
 

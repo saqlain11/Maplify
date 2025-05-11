@@ -6,7 +6,11 @@ const generalReducer = (
 ) => {
   switch (type) {
     case ACTIONS.SET_ACTIVE_TAB:
-      return { ...state, activeTab: payload.tab, selectedPlace: [] };
+      return {
+        ...state,
+        activeTab: payload.tab,
+        selectedPlace: INITIAL_STATE.selectedPlace,
+      };
     case ACTIONS.SET_IS_SEARCHING:
       return { ...state, isSearching: payload.isSearching };
     case ACTIONS.SET_CURRENT_LOCATION:
@@ -15,7 +19,7 @@ const generalReducer = (
       return {
         ...state,
         suggestedPlaces: [...payload.suggestedPlaces],
-        selectedPlace: {},
+        selectedPlace: INITIAL_STATE.selectedPlace,
         animate: false,
       };
     case ACTIONS.SET_SELECTED_PLACE:

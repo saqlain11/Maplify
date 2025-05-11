@@ -19,7 +19,7 @@ const useAsyncStorage = (key: string) => {
       if (!duplicateItem.length) {
         await AsyncStorage.setItem(
           key,
-          JSON.stringify([...previousItem, selectedPlace]),
+          JSON.stringify([selectedPlace, ...previousItem]),
         );
       }
     },

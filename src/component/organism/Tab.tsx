@@ -6,12 +6,14 @@ import { TabButton } from '../molecule';
 import { tabStyle } from './Tab.style';
 const Tab = () => {
   const { activeTab, setActiveTab } = useContext(GeneralContext);
+
   const onTabPress = useCallback(
     (tab: TABS) => {
       activeTab !== tab && setActiveTab(tab);
     },
     [setActiveTab, activeTab],
   );
+
   return (
     <View style={tabStyle.container}>
       <TabButton
