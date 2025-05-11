@@ -35,7 +35,7 @@ export const INITIAL_STATE: IGeneralState = {
   isSearching: false,
   suggestedPlaces: [],
   history: [],
-  animate:true,
+  animate: true,
 } as const;
 
 export const ACTIONS = {

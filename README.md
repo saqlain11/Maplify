@@ -1,14 +1,117 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🌍 **Maplify**
 
-# Getting Started
+Maplify is a React Native mobile application offering intuitive map-based functionalities, such as place search and history tracking.
+
+---
+
+## 🛠️ **Approach & Technical Choices**
+
+### 🎨 **Atomic Design System**
+
+The `component/` folder follows the **Atomic Design** methodology, organizing UI components into a hierarchy based on complexity and reusability:
+
+- **Molecules**: Simple composite components formed by combining basic UI elements (e.g., buttons, dropdowns, loaders). These are functional units used throughout the app.
+- **Organisms**: More complex UI blocks composed of molecules and other elements, representing full sections or modules (e.g., maps, tab groups, search bars).
+
+This layered approach promotes consistency, scalability, and separation of concerns, making maintenance and testing easier.
+
+---
+
+## 🧠 **State Management**
+
+Maplify uses the **React Context API** combined with custom reducers to manage global state across the app. This modular approach keeps the state predictable and avoids prop drilling, making the app scalable for larger features.
+
+- **context/**: Provides shared application state via React Context Providers.
+- **reducer/**: Defines pure functions to handle state updates based on dispatched actions.
+
+---
+
+## 🧱 **Project Structure**
+
+The project follows a clear and modular folder structure:
+
+```
+.
+├── component       # Atomic design-based UI components
+├── constant        # App-wide constants and config
+├── context         # React Contexts for global state
+├── hook            # Custom React hooks
+├── reducer         # Reducers for structured state updates
+├── screen          # Application screens (e.g., Landing)
+├── service         # External API integrations (e.g., Google)
+├── theme           # Design tokens (color, font, spacing)
+├── typing          # TypeScript types and interfaces
+└── util            # Shared utility functions
+```
+
+---
+
+## 🧹 **Code Quality & Consistency**
+
+To maintain a clean and consistent codebase, the following tools are used:
+
+- **ESLint**: Static code analysis for enforcing style and catching errors.
+- **Prettier**: Opinionated code formatter.
+- **Husky**: Git hooks to run checks before commits.
+- **lint-staged**: Runs linters on staged files before committing.
+
+These tools ensure that every commit adheres to the project's coding standards automatically.
+
+---
+
+## 🧑‍💻 **Developer Experience**
+
+- **Path Aliases**: Set up via `tsconfig.json` and `babel.config.js` to avoid long relative imports and improve code readability.  
+  Example:  
+  `import { Loader } from '@maplify/molecule'` instead of `../../../component/molecule`.
+
+---
+
+## ⚙️ **Getting Started**
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Start Metro
+### Step 1: 🚧 **Pre-start**
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+Clone the project:
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+```sh
+git clone https://github.com/saqlain11/Maplify.git
+cd Maplify
+```
+
+Make sure you're using the correct Node version by running the following (based on `.nvmrc`):
+
+```sh
+nvm use # This will use the node version defined in the project.
+```
+
+---
+
+### 🗺️ **For Google Maps**
+
+To set up Google Maps:
+
+- **For iOS**:  
+  Go to the `ios/Maplify/AppDelegate.swift` file and paste your API key instead of `YOUR_API_KEY`.
+
+- **For Android**:  
+  Go to `android/src/main/AndroidManifest.xml` and paste your API key instead of `YOUR_API_KEY`.
+
+#### 🚨 **Important Note**
+
+Add a `.env` file in the root of the project with your Google Places API credentials:
+
+```sh
+BASE_URL=https://maps.googleapis.com/
+API_KEY=YOUR_API_KEY
+```
+
+---
+
+### Step 2: ▶️ **Start Metro**
+
+Run **Metro**, the JavaScript bundler for React Native:
 
 ```sh
 # Using npm
@@ -18,11 +121,13 @@ npm start
 yarn start
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Step 3: ⚙️ **Build and Run Your App**
 
-### Android
+With Metro running, open a new terminal window and use one of the following commands to build and run your Android or iOS app:
+
+- **For Android**:
 
 ```sh
 # Using npm
@@ -32,23 +137,16 @@ npm run android
 yarn android
 ```
 
-### iOS
+- **For iOS**:
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+Make sure to install CocoaPods dependencies:
 
 ```sh
 bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
 bundle exec pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Then, build the app:
 
 ```sh
 # Using npm
@@ -58,40 +156,8 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Authors
 
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+[@Saqlain11](https://github.com/saqlain11)
