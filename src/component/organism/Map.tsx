@@ -8,7 +8,7 @@ import { mapStyle } from './Map.style';
 
 const Map = () => {
   const mapRef: React.RefObject<MapView> = useRef(null as unknown as MapView);
-  const { currentLocation, setCurrentLocation, selectedPlace } =
+  const { currentLocation, setCurrentLocation, selectedPlace, animate } =
     useContext(GeneralContext);
 
   useEffect(() => {
@@ -17,6 +17,9 @@ const Map = () => {
     });
   }, []);
   useEffect(() => {
+    if (!animate) {
+      return;
+    }
     mapRef.current?.animateToRegion(
       {
         ...DEFAULT_INITIAL_REGION,

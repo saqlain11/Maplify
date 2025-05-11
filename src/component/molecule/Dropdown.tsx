@@ -9,7 +9,7 @@ import { dropdownStyle } from './Dropdown.style';
 interface DropDownProps {
   data: IDropdownData[];
   value: number;
-  onChange: (item: any) => void;
+  onChange: (item: number) => void;
   onSearch?: (searchedPlace: string) => void;
 }
 

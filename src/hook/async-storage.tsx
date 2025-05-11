@@ -9,10 +9,13 @@ const useAsyncStorage = (key: string) => {
   }, [key]);
   const setPlaceToStorage = useCallback(
     async (selectedPlace: ISelectedPlace) => {
+      //Get All the items
       const previousItem: ISelectedPlace[] = await getPlacesFromStorage();
+      //Check if the new place is already there no need to add a duplicate one
       const duplicateItem = previousItem.filter(
         item => item.name === selectedPlace.name,
       );
+      //If current item not in the list add one ✌️
       if (!duplicateItem.length) {
         await AsyncStorage.setItem(
           key,

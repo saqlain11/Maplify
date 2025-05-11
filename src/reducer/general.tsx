@@ -16,6 +16,7 @@ const generalReducer = (
         ...state,
         suggestedPlaces: [...payload.suggestedPlaces],
         selectedPlace: {},
+        animate: false,
       };
     case ACTIONS.SET_SELECTED_PLACE:
       return {
@@ -26,6 +27,7 @@ const generalReducer = (
             : { ...state.suggestedPlaces[payload.selectedPlaceIndex] }),
           selectedPlaceIndex: payload.selectedPlaceIndex,
         },
+        animate: true,
       };
     case ACTIONS.SET_HISTORY:
       return {

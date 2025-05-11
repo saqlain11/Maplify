@@ -10,6 +10,11 @@ const axiosInstance = axios.create({
   },
 });
 
+/**
+ * This is wrapper of axios to fetch http request and extract data is sucess
+ * @param request
+ * @returns Promise<T> generic data with type that passed from services
+ */
 export const fetcher = async <T>(request: AxiosRequestConfig): Promise<T> => {
   try {
     const result = await axiosInstance(request);

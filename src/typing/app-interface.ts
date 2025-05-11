@@ -8,6 +8,7 @@ export interface IGeneralState {
   isSearching: boolean;
   suggestedPlaces: IResult[];
   history: ISelectedPlace[];
+  animate:boolean
 }
 interface ILocation {
   lat: number;
