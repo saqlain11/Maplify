@@ -8,25 +8,18 @@ import {
 import { useAsyncStorage } from '@Maplify/hook';
 import { generalReducer } from '@Maplify/reducer';
 import { googlePlaces } from '@Maplify/service';
-import { IGeneralState } from '@Maplify/typing';
+import {
+  IContextAction,
+  IGeneralContext,
+  IGeneralState,
+} from '@Maplify/typing';
 import { GeolocationResponse } from '@react-native-community/geolocation';
 import debounce from 'lodash/debounce';
 import React, { createContext, RefObject, useReducer, useRef } from 'react';
-interface IGeneralContext extends IGeneralState, IContextAction {
-  setActiveTab: (tab: TABS) => void;
-}
-interface IContextAction {
-  setActiveTab: (tab: TABS) => void;
-  setIsLoading: (isLoading: boolean) => void;
-  setCurrentLocation: (currentLocation: GeolocationResponse) => void;
-  setSelectedPlace: (selectedPlaceIndex: number) => void;
-  searchSuggestedPlace: (searchedPlace: string) => void;
-  getHistory: () => void;
-}
+
 const GeneralContext = createContext<IGeneralContext>({
   ...INITIAL_STATE,
   setActiveTab: () => {},
-  setIsLoading: () => {},
   setCurrentLocation: () => {},
   setSelectedPlace: () => {},
   searchSuggestedPlace: () => {},
@@ -40,9 +33,7 @@ const GeneralProvider = ({ children }: { children: React.ReactNode }) => {
     setActiveTab: (tab: TABS) => {
       dispatch({ type: ACTIONS.SET_ACTIVE_TAB, payload: { tab } });
     },
-    setIsLoading: (isLoading: boolean) => {
-      dispatch({ type: ACTIONS.SET_IS_SEARCHING, payload: { isLoading } });
-    },
+
     setCurrentLocation: (currentLocation: GeolocationResponse) => {
       dispatch({
         type: ACTIONS.SET_CURRENT_LOCATION,

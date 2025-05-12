@@ -24,6 +24,7 @@ const Dropdown = ({
   return (
     <View style={dropdownStyle.container}>
       <DropdownComponent
+        testID="dropdown"
         style={[
           dropdownStyle.dropdown,
           isFocus && { borderColor: color.border.ghost },

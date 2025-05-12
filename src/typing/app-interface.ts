@@ -51,3 +51,12 @@ export interface IDropdownData {
 export interface ISelectedPlace extends IResult {
   selectedPlaceIndex: number;
 }
+export interface IGeneralContext extends IGeneralState, IContextAction {}
+
+export interface IContextAction {
+  setActiveTab: (tab: TABS) => void;
+  setCurrentLocation: (currentLocation: GeolocationResponse) => void;
+  setSelectedPlace: (selectedPlaceIndex: number) => void;
+  searchSuggestedPlace: (searchedPlace: string) => void;
+  getHistory: () => void;
+}

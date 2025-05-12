@@ -16,6 +16,7 @@ const TabButton = ({
 }: TabButtonProps) => {
   return (
     <TouchableOpacity
+      testID="tab-button"
       onPress={() => {
         onTabPress(activeTab);
       }}

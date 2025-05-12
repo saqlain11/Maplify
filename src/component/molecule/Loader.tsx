@@ -5,7 +5,7 @@ import { loaderStyle } from './Loader.style';
 
 const Loader = () => {
   return (
-    <View style={loaderStyle.container}>
+    <View testID="loader" style={loaderStyle.container}>
       <ActivityIndicator size="large" color={color.bg.primary} />
     </View>
   );
