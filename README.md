@@ -53,9 +53,17 @@ To maintain a clean and consistent codebase, the following tools are used:
 - **ESLint**: Static code analysis for enforcing style and catching errors.
 - **Prettier**: Opinionated code formatter.
 - **Husky**: Git hooks to run checks before commits.
-- **lint-staged**: Runs linters on staged files before committing.
+- **TypeScript (tsc)**: Ensures type safety by running type-checking during CI or pre-commit.
+- **Test Runner (e.g., Jest)**: Runs unit and integration tests to ensure code reliability.
 
 These tools ensure that every commit adheres to the project's coding standards automatically.
+For running these explicitly you can go through `package.json` scripts
+
+```sh
+   npm run lint # for eslint
+   npm run format # for prettier formatting
+   npm run test:coverage # run test test and coverage
+```
 
 ---
 
@@ -77,6 +85,7 @@ Clone the project:
 
 ```sh
 git clone https://github.com/saqlain11/Maplify.git
+git checkout main
 cd Maplify
 ```
 
@@ -155,8 +164,15 @@ npm run ios
 # OR using Yarn
 yarn ios
 ```
+Once you see the these screen 
 
----
+<img src="./demo/Demo_iOS.png" alt="Demo iOS" width="200" height="auto" />
+<img src="./demo/Demo_Android.png" alt="Demo Android" width="200" height="auto" />
+
+
+## Congratulations! 🏆 you made it 🥳 👏
+
+
 
 ## Authors
 
