@@ -164,15 +164,13 @@ npm run ios
 # OR using Yarn
 yarn ios
 ```
-Once you see the these screen 
+
+Once you see the these screen
 
 <img src="./demo/Demo_iOS.png" alt="Demo iOS" width="200" height="auto" />
 <img src="./demo/Demo_Android.png" alt="Demo Android" width="200" height="auto" />
 
-
 ## Congratulations! 🏆 you made it 🥳 👏
-
-
 
 ## Authors
 
