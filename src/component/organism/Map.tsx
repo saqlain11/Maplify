@@ -2,7 +2,7 @@
 import { DEFAULT_INITIAL_REGION } from '@Maplify/constant';
 import { GeneralContext } from '@Maplify/context';
 import Geolocation from '@react-native-community/geolocation';
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { mapStyle } from './Map.style';
 
@@ -32,25 +32,17 @@ const Map = () => {
       },
       1000,
     );
-  }, [selectedPlace.name]);
-
-  const animateToRegion = useCallback(() => {
-    mapRef.current?.animateToRegion(
-      {
-        ...DEFAULT_INITIAL_REGION,
-        longitude: currentLocation?.coords.longitude,
-        latitude: currentLocation?.coords.latitude,
-      },
-      1000,
-    );
-  }, [currentLocation.coords.latitude, currentLocation.coords.longitude]);
+  }, [
+    selectedPlace.name,
+    currentLocation.coords.latitude,
+    currentLocation.coords.longitude,
+  ]);
 
   return (
     <MapView
       ref={mapRef}
       initialRegion={DEFAULT_INITIAL_REGION}
       region={DEFAULT_INITIAL_REGION}
-      onMapReady={animateToRegion}
       rotateEnabled
       userLocationPriority="high"
       showsMyLocationButton
